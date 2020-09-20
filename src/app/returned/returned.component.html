@@ -1,0 +1,54 @@
+
+ <div class="container col-11">
+    <div class="table-responsive table-bordered" >
+      <table >
+        <thead>
+          <th  > </th>
+          <th   >Status <div class="btn-group" mdbDropdown>
+          
+
+              <i mdbDropdownToggle   
+              mdbWavesEffect class="fa fa-filter point" aria-hidden="true"></i>
+            
+      
+            <div class="dropdown-menu dropdown-primary">
+              <a class="dropdown-item" (click)="filtera()">Available</a>
+              <a class="dropdown-item" (click)="filterb()">Unavailable</a>
+       
+             </div>
+          </div></th>
+
+          <th  class="point" [mdbTableSort]="shown" sortBy="Title" (click)="icon=!icon;iconc=1" >Title  <i *ngIf="icon && iconc==1" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon  && iconc==1"class="fa fa-arrow-down" aria-hidden="true"></i>
+          </th>
+          <th  class="point" [mdbTableSort]="shown" sortBy="Template"  (click)="icon=!icon;iconc=2">Template  <i *ngIf="icon && iconc==2"  class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon  && iconc==2"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th   class="point"[mdbTableSort]="shown" sortBy="Course"  (click)="icon=!icon;iconc=3">Course  <i *ngIf="icon && iconc==3"  class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon  && iconc==3"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+       
+        </thead>
+        <tbody>
+          <tr  *ngFor="let el of shown; let i = index;" >
+        <td> <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        </div></td>
+        <td >{{el.Status}}</td>
+
+            <td >{{el.Title}}</td>
+            <td>{{el.Template}}</td>
+            <td>{{el.Course}}</td>
+            
+          </tr>
+        </tbody>
+        <tfoot> <tr>
+       
+          <td colspan="12"><button  (click)="clicked()"  class="btn-block">Load {{show}}</button></td>
+    
+        </tr></tfoot>
+
+      </table>
+</div>
+
+</div>
+
+<footer class="footer"><span class="small">powered by</span><span class="big">ITWorx Edcation</span></footer>

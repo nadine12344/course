@@ -1,0 +1,99 @@
+
+ <div class="container col-11">
+    <div class="table-responsive table-bordered" >
+      <table >
+        <thead>
+          <th  > </th>
+          <th   >Status <div class="btn-group" mdbDropdown>
+          
+
+              <i mdbDropdownToggle   
+              mdbWavesEffect class="fa fa-filter point" aria-hidden="true"></i>
+            
+      
+            <div class="dropdown-menu dropdown-primary">
+              <a class="dropdown-item" (click)="filtera()">Available</a>
+              <a class="dropdown-item" (click)="filterb()">Unavailable</a>
+       
+             </div>
+          </div></th>
+
+          <th  class="point" [mdbTableSort]="shown" sortBy="Title" (click)="icon=!icon;iconc=1" >Title <i *ngIf="icon && iconc==1" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==1"class="fa fa-arrow-down" aria-hidden="true"></i>
+          </th>
+          <th  class="point" (click)="icon=!icon;iconc=2" [mdbTableSort]="shown" sortBy="Template"  >Template  <i *ngIf="icon && iconc==2" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==2"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th   class="point" (click)="icon=!icon;iconc=3"[mdbTableSort]="shown" sortBy="Course"  >Course  <i *ngIf="icon && iconc==3" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==3"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th   class="point"(click)="icon=!icon;iconc=4"[mdbTableSort]="shown" sortBy="Attendants"  >Attendants  <i *ngIf="icon && iconc==4" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==4"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th  class="point" (click)="icon=!icon;iconc=5" [mdbTableSort]="shown" sortBy="startDate"  >Start Date  <i *ngIf="icon && iconc==5" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==5"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th  class="point" (click)="icon=!icon;iconc=6" [mdbTableSort]="shown" sortBy="endDate">End Date  <i *ngIf="icon && iconc==6" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==6"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th  class="point" (click)="icon=!icon;iconc=7" [mdbTableSort]="shown" sortBy="DaysLeft">Days Left  <i *ngIf="icon && iconc==7" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==7"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th  class="point" (click)="icon=!icon;iconc=8" [mdbTableSort]="shown" sortBy="Solved">Solved  <i *ngIf="icon && iconc==8" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==8"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th  class="point" (click)="icon=!icon;iconc=9" [mdbTableSort]="shown" sortBy="Graded">Graded  <i *ngIf="icon && iconc==9" class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i *ngIf="!icon && iconc==9"class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th  > </th>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let el of shown; let i = index;" >
+        <td> <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        </div></td>
+        <td >{{el.Status}}</td>
+
+            <td >{{el.Title}}</td>
+            <td>{{el.Template}}</td>
+            <td>{{el.Course}}</td>
+            <td>{{el.Attendants}}</td>
+            <td>{{el.startDate.toLocaleDateString()}}
+              <div class="yellow">
+                {{el.startDate.toLocaleTimeString()}}
+              </div>
+            </td>
+            <td>{{el.endDate.toLocaleDateString()}}
+              <div class="green">
+                {{el.endDate.toLocaleTimeString()}}
+              </div>
+            </td>
+            <td class="red">{{el.DaysLeft}}</td>
+            <td >{{el.Solved}}%</td>
+            <td >{{el.Graded}}%</td>
+            <td><a (click)="openDialog()"><img src="/assets/images/chart.png"></a></td>
+            <!-- <td ><ng-template #hoverImgTemp><img src="/assets/images/chart.png"></ng-template>
+              <a  data-toggle="modal" data-target="#exampleModal" ><img src="/assets/images/chart.png"></a></td> -->
+
+
+          </tr>
+        </tbody>
+        <tfoot> <tr>
+       
+          <td colspan="12"><button  (click)="clicked()"  class="btn-block">Load {{show}}</button></td>
+    
+        </tr></tfoot>
+
+      </table>
+</div>
+
+</div>
+
+<footer class="footer"><span class="small">powered by</span><span class="big">ITWorx Edcation</span></footer>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="/assets/images/chart.png">
+      </div>
+     
+    </div>
+  </div>
+</div>

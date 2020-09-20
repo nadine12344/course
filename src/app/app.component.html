@@ -1,0 +1,13 @@
+<nav >
+    <img class="i1 img-responsive" src="assets/images/logo2.png"><span>FERNHILL SCHOOL</span>
+  </nav>
+
+  <div class="container col-11">
+    <div class="c">
+    <button [ngClass]="{ 'clicked':  submit==0 }" type="button" [routerLink]="['/templates']" class="btn button  btn-md"(click)="submit=0">Templates</button>
+    <button [ngClass]="{ 'clicked':  submit==1 }"type="button" [routerLink]="['/table']" class="btn  btn-md a" (click)="submit=1">Active</button>
+
+    <button [ngClass]="{ 'clicked':  submit==2 }"type="button"  [routerLink]="['/returned']"class="btn  btn-md" (click)="submit=2">Reteurned</button></div>
+ </div>
+
+ <router-outlet></router-outlet>

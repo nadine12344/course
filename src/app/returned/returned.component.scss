@@ -1,0 +1,68 @@
+
+table{
+    width:100%;
+  
+  }
+  .table-bordered{
+    margin-bottom: 50px;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    background-color:rgba(6, 155, 192, 0.842);
+    color: white;
+  
+  }
+  tr:nth-child(even) {
+    background-color: rgb(241, 249, 255);
+    }
+   th{
+     background-color:rgba(6, 155, 192, 0.842);
+     border-bottom: rgba(6, 155, 192, 0.842);
+     border-top: rgba(6, 155, 192, 0.842);
+     color: aliceblue;
+     height: 45px;
+  
+   }
+   .point{
+    cursor: pointer;
+   }
+   span{margin-left: 10px;}
+   .yellow{
+     color: rgb(238, 202, 44);
+   }
+   .green{
+     color:rgb(5, 163, 5);
+   }
+   .red{
+    color:rgb(190, 3, 3); 
+   }
+    
+  .form-check{
+    margin-left:5px;
+  }
+  
+  
+  
+  
+  .btn-block{
+   width:100%;
+   background-color: white;
+   color:rgba(6, 155, 192, 0.842);
+   border:white;
+  
+  }
+  .btn-block:hover{
+  
+    color:rgba(223, 244, 250, 0.842);
+   }
+  .divChart{
+    width: 50px;
+    height:50px;
+  
+  }
+   
+  
